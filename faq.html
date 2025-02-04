@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Preciseo Tax Services</title>
+    
+    <!-- Core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: #1a237e;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            border: none;
+            border-radius: 0;
+            margin-top: 0;
+            padding: 2rem 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .dropdown-title {
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .dropdown-item {
+            padding: 0.5rem 0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: transparent;
+            color: #1a237e;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item i {
+            color: #1a237e;
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-shape {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* FAQ Specific Styles */
+        .faq-header {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            text-align: center;
+        }
+
+        .faq-categories {
+            position: sticky;
+            top: 100px;
+        }
+
+        .faq-categories .nav-link {
+            color: #333 !important;
+            padding: 0.75rem 1rem !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-categories .nav-link:hover,
+        .faq-categories .nav-link.active {
+            background: #1a237e;
+            color: white !important;
+        }
+
+        .category-title {
+            color: #1a237e;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            border-radius: 10px !important;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .accordion-button {
+            padding: 1.25rem;
+            font-weight: 500;
+            color: #333;
+            background: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #1a237e;
+            background: white;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,0.1);
+        }
+
+        .accordion-body {
+            padding: 1.25rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: #1a237e;
+            border-color: #1a237e;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #0d47a1;
+            border-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #1a237e;
+            color: white;
+            position: relative;
+        }
+
+        .footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .footer .social-links a {
+            color: white;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer ul li a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer ul li i {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer .contact-info i {
+            color: white;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .footer hr {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation Styles */
+        [data-aos] {
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .navbar {
+                padding: 0.5rem 0;
+            }
+
+            .dropdown-menu {
+                padding: 1rem 0;
+            }
+
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .faq-categories {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <h1 class="h3 mb-0">Preciseo Tax</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="service-category">
+                                            <h6>Professional Services</h6>
+                                            <a class="dropdown-item" href="business-filing.html">
+                                                <i class="fas fa-file-invoice-dollar"></i>
+                                                <div>
+                                                    <span>Business Filing <span class="professional-badge">Professional</span></span>
+                                                    <span class="service-description">Accurate and timely business tax filing</span>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="itin-processing.html">
+                                                <i class="fas fa-id-card"></i>
+                                                <div>
+                                                    <span>ITIN Processing <span class="professional-badge">Professional</span></span>
+                                                    <span class="service-description">Efficient ITIN application and renewal</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="service-category">
+                                            <h6>Specialized Services</h6>
+                                            <a class="dropdown-item" href="fbar-fatca.html">
+                                                <i class="fas fa-globe"></i>
+                                                <div>
+                                                    <span>FBAR & FATCA <span class="professional-badge">Professional</span></span>
+                                                    <span class="service-description">International tax compliance solutions</span>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="personal-tax.html">
+                                                <i class="fas fa-user-tie"></i>
+                                                <div>
+                                                    <span>Personal Tax Filing <span class="professional-badge">Professional</span></span>
+                                                    <span class="service-description">Expert individual tax return preparation</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="service-category">
+                                            <h6>Premium Services</h6>
+                                            <a class="dropdown-item" href="tax-planning.html">
+                                                <i class="fas fa-chart-line"></i>
+                                                <div>
+                                                    <span>Tax Planning <span class="premium-badge">Premium</span></span>
+                                                    <span class="service-description">Strategic tax optimization for maximum savings</span>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="business-formation.html">
+                                                <i class="fas fa-building"></i>
+                                                <div>
+                                                    <span>Business Formation <span class="premium-badge">Premium</span></span>
+                                                    <span class="service-description">Complete business setup and registration</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faq.html">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-login" href="https://access.securefilepro.com/portal/#/login">Client Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAQ Header -->
+    <header class="faq-header">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Frequently Asked Questions</h1>
+            <p class="lead">Find answers to common tax-related questions</p>
+        </div>
+    </header>
+
+    <!-- Search Box -->
+    <div class="container search-container">
+        <div class="search-box">
+            <input type="text" class="form-control search-input" id="faqSearch" placeholder="Search FAQs...">
+        </div>
+    </div>
+
+    <!-- FAQ Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Category Navigation -->
+            <div class="col-lg-3">
+                <div class="faq-categories">
+                    <h5 class="mb-3">Categories</h5>
+                    <div class="nav flex-column">
+                        <a href="#irs" class="category-link">IRS Procedures</a>
+                        <a href="#filing" class="category-link">Filing Requirements</a>
+                        <a href="#deductions" class="category-link">Deductions</a>
+                        <a href="#income" class="category-link">Types of Income</a>
+                        <a href="#retirement" class="category-link">Retirement & IRAs</a>
+                        <a href="#credits" class="category-link">Tax Credits</a>
+                        <a href="#business" class="category-link">Business & Self-Employment</a>
+                        <a href="#international" class="category-link">International Taxation</a>
+                        <a href="#electronic" class="category-link">Electronic Filing</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="col-lg-9">
+                <!-- IRS Procedures -->
+                <h3 id="irs" class="category-title">IRS Procedures</h3>
+                <div class="accordion" id="irsProcedures">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#irs1">
+                                How can I check the status of my tax refund?
+                            </button>
+                        </h2>
+                        <div id="irs1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                You can check your refund status:
+                                <ul>
+                                    <li>Online through the IRS "Where's My Refund?" tool</li>
+                                    <li>Using the IRS2Go mobile app</li>
+                                    <li>By calling the IRS refund hotline</li>
+                                </ul>
+                                You'll need your:
+                                <ul>
+                                    <li>Social Security number</li>
+                                    <li>Filing status</li>
+                                    <li>Exact refund amount</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filing Requirements -->
+                <h3 id="filing" class="category-title">Filing Requirements & Status</h3>
+                <div class="accordion" id="filingReqs">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filing1">
+                                Who qualifies as a dependent on my tax return?
+                            </button>
+                        </h2>
+                        <div id="filing1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                A dependent must be either a qualifying child or qualifying relative:
+                                <p><strong>Qualifying Child:</strong></p>
+                                <ul>
+                                    <li>Must be under age 19 or a student under 24</li>
+                                    <li>Must live with you for more than half the year</li>
+                                    <li>Must not provide more than half of their own support</li>
+                                    <li>Must be related to you</li>
+                                </ul>
+                                <p><strong>Qualifying Relative:</strong></p>
+                                <ul>
+                                    <li>Cannot be your qualifying child or another person's</li>
+                                    <li>Must have gross income less than $4,400 (2023)</li>
+                                    <li>You must provide more than half of their support</li>
+                                    <li>Must be related to you or live with you all year</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retirement & Social Security -->
+                <h3 id="retirement" class="category-title">Retirement Plans & Social Security</h3>
+                <div class="accordion" id="retirementSection">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#retire1">
+                                How much can I contribute to my IRA this year?
+                            </button>
+                        </h2>
+                        <div id="retire1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                For 2023, the contribution limits are:
+                                <ul>
+                                    <li>Under age 50: $6,500</li>
+                                    <li>Age 50 or older: $7,500 (includes $1,000 catch-up)</li>
+                                </ul>
+                                <p>These limits apply to the total of your traditional and Roth IRA contributions.</p>
+                                <p><strong>Note:</strong> Your contribution might be limited based on your income and whether you or your spouse are covered by a retirement plan at work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tax Credits -->
+                <h3 id="credits" class="category-title">Tax Credits</h3>
+                <div class="accordion" id="creditsSection">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#credit1">
+                                What is the Earned Income Tax Credit (EITC)?
+                            </button>
+                        </h2>
+                        <div id="credit1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                The EITC is a refundable tax credit for low to moderate-income workers:
+                                <ul>
+                                    <li>Must have earned income and valid Social Security number</li>
+                                    <li>Cannot exceed certain income limits based on filing status and number of qualifying children</li>
+                                    <li>Maximum credit for 2023:
+                                        <ul>
+                                            <li>No qualifying children: $600</li>
+                                            <li>1 child: $3,995</li>
+                                            <li>2 children: $6,604</li>
+                                            <li>3+ children: $7,430</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & Self-Employment -->
+                <h3 id="business" class="category-title">Business & Self-Employment</h3>
+                <div class="accordion" id="businessSection">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#business1">
+                                What expenses can I deduct as a self-employed individual?
+                            </button>
+                        </h2>
+                        <div id="business1" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                Common deductible expenses include:
+                                <ul>
+                                    <li>Home office expenses</li>
+                                    <li>Vehicle expenses for business use</li>
+                                    <li>Health insurance premiums</li>
+                                    <li>Professional services (legal, accounting)</li>
+                                    <li>Office supplies and equipment</li>
+                                    <li>Business travel and meals</li>
+                                    <li>Marketing and advertising</li>
+                                    <li>Professional development and education</li>
+                                </ul>
+                                <p><strong>Note:</strong> Keep detailed records and receipts for all business expenses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <h5 class="mb-4">About Preciseo Tax</h5>
+                    <p>Professional tax services tailored to your needs. We provide expert tax preparation, planning, and consultation services to individuals and businesses.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://www.facebook.com/p/Preciseo-Tax-61572610200882/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/preciseo_tax/?igshid=MWM2cHVnbnhoeXo1eA%3D%3D" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="services.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>Services
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>About Us
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="faq.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>FAQ's
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Other Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="privacy-policy.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>Privacy Policy
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="cookie-policy.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>Cookie Policy
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="terms-of-use.html" class="text-white text-decoration-none">
+                                <i class="fas fa-chevron-right me-2"></i>Terms of Use
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-3">
+                            <i class="fas fa-map-marker-alt mt-1 me-3 text-white"></i>
+                            <p class="mb-0">501 Scarborough Drive<br>Egg Harbor Township, NJ 08234</p>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="fas fa-phone mt-1 me-3 text-white"></i>
+                            <p class="mb-0">(551) 758-9773</p>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="fas fa-envelope mt-1 me-3 text-white"></i>
+                            <p class="mb-0">info@preciseotax.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3 border-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Preciseo Tax. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('faqSearch').addEventListener('input', function(e) {
+            const searchText = e.target.value.toLowerCase();
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+                const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+                
+                if (question.includes(searchText) || answer.includes(searchText)) {
+                    item.style.display = '';
+                    // Show the parent category
+                    const categoryTitle = item.closest('.accordion').previousElementSibling;
+                    if (categoryTitle) {
+                        categoryTitle.style.display = '';
+                    }
+                } else {
+                    item.style.display = 'none';
+                    // Hide empty categories
+                    const categoryAccordion = item.closest('.accordion');
+                    const visibleItems = categoryAccordion.querySelectorAll('.accordion-item[style="display: none;"]');
+                    if (visibleItems.length === categoryAccordion.querySelectorAll('.accordion-item').length) {
+                        categoryAccordion.previousElementSibling.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Highlight active category
+        const categoryLinks = document.querySelectorAll('.category-link');
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                categoryLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scroll to categories
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

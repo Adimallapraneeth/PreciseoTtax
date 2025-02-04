@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FBAR & FATCA Filing Services - Khob Tax</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #001A57;
+            --secondary-color: #054789;
+            --accent-color: #FF9933;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 26, 87, 0.9), rgba(0, 26, 87, 0.9)),
+                        url('https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: white;
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-step {
+            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .animation-container {
+            height: 300px;
+            margin: 2rem 0;
+        }
+
+        .faq-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .faq-card {
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-card .card-header {
+            background: none;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .cta-section {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+        }
+
+        .service-card {
+            transition: transform 0.3s;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .requirements-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Khob Tax</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="fbar-fatca.html">FBAR/FATCA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">FBAR & FATCA Filing Services</h1>
+                    <p class="lead mb-4">Expert guidance for U.S. taxpayers with foreign assets in Bay Area, Fremont, and Dublin</p>
+                    <a href="#contact" class="btn btn-light btn-lg">Schedule Consultation</a>
+                </div>
+                <div class="col-lg-6">
+                    <div id="hero-animation" class="animation-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Information Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Who Must File an FBAR?</h2>
+                    <div class="requirements-list">
+                        <div class="requirement-item mb-3">
+                            <i class="fas fa-user-check text-primary me-2"></i>
+                            <span>U.S. citizens, U.S. residents, or entities (corporations, partnerships, LLCs)</span>
+                        </div>
+                        <div class="requirement-item mb-3">
+                            <i class="fas fa-signature text-primary me-2"></i>
+                            <span>Financial interest in or signature authority over foreign financial accounts</span>
+                        </div>
+                        <div class="requirement-item mb-3">
+                            <i class="fas fa-dollar-sign text-primary me-2"></i>
+                            <span>Aggregate value of all foreign accounts exceeds $10,000 at any time during the calendar year</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="requirements-animation" class="animation-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our FBAR & FATCA Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card h-100 p-4">
+                        <div id="filing-animation" class="animation-container"></div>
+                        <h3>FBAR Filing</h3>
+                        <p>Assistance with FinCEN Form 114 for reporting foreign bank accounts</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card h-100 p-4">
+                        <div id="compliance-animation" class="animation-container"></div>
+                        <h3>Compliance Review</h3>
+                        <p>Comprehensive review of your financial accounts</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card h-100 p-4">
+                        <div id="support-animation" class="animation-container"></div>
+                        <h3>Ongoing Support</h3>
+                        <p>Year-round guidance on FBAR regulations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Services Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Comprehensive FBAR & FATCA Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <img src="https://images.pexels.com/photos/6863250/pexels-photo-6863250.jpeg" alt="FBAR Filing" class="card-img-top">
+                        <div class="card-body">
+                            <h4>FBAR Filing</h4>
+                            <p>Assistance with FinCEN Form 114 for U.S. citizens and residents with foreign financial interests.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <img src="https://images.pexels.com/photos/4386442/pexels-photo-4386442.jpeg" alt="Compliance Review" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Compliance Review</h4>
+                            <p>Comprehensive review of your financial accounts to determine FBAR filing requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <img src="https://images.pexels.com/photos/4386339/pexels-photo-4386339.jpeg" alt="Record Keeping" class="card-img-top">
+                        <div class="card-body">
+                            <h4>Record Keeping</h4>
+                            <p>Organization and maintenance of necessary records required by the IRS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Step-by-Step Process</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Initial Consultation</h4>
+                                <p>We assess your situation to determine whether FBAR filing is required and clarify the details of your foreign financial accounts.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Data Collection & Documentation</h4>
+                                <p>We gather account information, including account numbers, names of financial institutions, and maximum account values.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Form Preparation & Review</h4>
+                                <p>Meticulous preparation of your FBAR filing (FinCEN Form 114) with detailed review.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg" alt="Process Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Khob Tax for FBAR Filing</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-award fa-3x text-primary mb-3"></i>
+                        <h4>Expert Knowledge</h4>
+                        <p>Our tax professionals specialize in FBAR filing and international tax compliance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+                        <h4>Local Expertise, Global Reach</h4>
+                        <p>Serving clients in Fremont, Dublin, and across the Bay Area with international financial accounts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card text-center p-4">
+                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                        <h4>Penalty Avoidance</h4>
+                        <p>We help you stay compliant and avoid severe penalties associated with non-filing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ items will be dynamically added -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Get Started with Your FBAR Filing Today!</h2>
+            <p class="lead mb-4">Serving clients in Fremont, Dublin, the Bay Area, and beyond</p>
+            <a href="#contact" class="btn btn-light btn-lg">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@khobtax.com<br>Phone: (555) 123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Services</a></li>
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Preciseo-Tax-61572610200882/" target="_blank" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/preciseo_tax/?igsh=MWM2cHVnbnhoeXo1eA%3D%3D" target="_blank" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Update animations configuration
+        const animations = {
+            hero: {
+                container: 'hero-animation',
+                path: 'https://assets9.lottiefiles.com/packages/lf20_q8ND3n.json'
+            },
+            requirements: {
+                container: 'requirements-animation',
+                path: 'https://assets5.lottiefiles.com/packages/lf20_jvxwtdtp.json'
+            },
+            process: {
+                container: 'process-animation',
+                path: 'https://assets3.lottiefiles.com/packages/lf20_xvrofzfk.json'
+            }
+        };
+
+        // Add more FAQ items
+        const faqs = [
+            {
+                question: 'What is FATCA (Foreign Account Tax Compliance Act)?',
+                answer: 'FATCA is a U.S. tax law aimed at preventing tax evasion by U.S. taxpayers holding financial assets outside the U.S. Under FATCA, U.S. taxpayers must report foreign financial accounts and assets if they exceed certain thresholds.'
+            },
+            {
+                question: 'What are the filing deadlines for FBAR and FATCA?',
+                answer: 'FBAR must be filed by April 15th following the calendar year being reported, with an automatic extension to October 15th. FATCA Form 8938 is filed with your income tax return.'
+            },
+            {
+                question: 'What are the penalties for failing to file FBAR or FATCA reports?',
+                answer: 'Non-willful violations can result in penalties up to $10,000 per violation. Willful violations can face penalties up to $100,000 or 50% of the account balance at the time of violation.'
+            },
+            {
+                question: 'Can Khob Tax help me with both FBAR and FATCA filings?',
+                answer: 'Yes, we provide comprehensive services for both FBAR and FATCA reporting requirements, ensuring full compliance with all regulations.'
+            },
+            {
+                question: 'Can I file FBAR and FATCA online?',
+                answer: 'Yes, FBAR must be filed electronically through the FinCEN BSA E-Filing System. We assist with the entire electronic filing process.'
+            },
+            {
+                question: 'What information do I need to provide for FBAR and FATCA filings?',
+                answer: 'You'll need account numbers, financial institution names, account types, maximum account values during the year, and account holder information.'
+            }
+        ];
+
+        // Initialize animations
+        Object.entries(animations).forEach(([key, config]) => {
+            const container = document.getElementById(config.container);
+            if (container) {
+                lottie.loadAnimation({
+                    container: container,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: config.path
+                });
+            }
+        });
+
+        // Add FAQ items
+        const accordion = document.getElementById('faqAccordion');
+        faqs.forEach((faq, index) => {
+            accordion.innerHTML += `
+                <div class="faq-card">
+                    <div class="card-header" id="heading${index}">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-dark text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}">
+                                ${faq.question}
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse${index}" class="collapse" data-bs-parent="#faqAccordion">
+                        <div class="card-body">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

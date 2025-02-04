@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Formation Services - Khob Tax</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #001A57;
+            --secondary-color: #054789;
+            --accent-color: #FF9933;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 26, 87, 0.9), rgba(0, 26, 87, 0.9)),
+                        url('https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: white;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .business-type-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .business-type-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .animation-container {
+            height: 300px;
+            margin: 2rem 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Khob Tax</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="business-formation.html">Business Formation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Business Formation Services</h1>
+                    <p class="lead mb-4">Turn your business dreams into reality with our comprehensive formation services</p>
+                    <a href="#contact" class="btn btn-light btn-lg">Start Your Business Today</a>
+                </div>
+                <div class="col-lg-6">
+                    <div id="hero-animation" class="animation-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Structures Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Choose Your Business Structure</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="business-type-card">
+                        <img src="https://images.pexels.com/photos/1181605/pexels-photo-1181605.jpeg" alt="Sole Proprietorship" class="img-fluid mb-3">
+                        <h4>Sole Proprietorship</h4>
+                        <p>Perfect for individual entrepreneurs starting their business journey.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Complete control</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Simple taxes</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Easy setup</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="business-type-card">
+                        <img src="https://images.pexels.com/photos/7841883/pexels-photo-7841883.jpeg" alt="Partnership" class="img-fluid mb-3">
+                        <h4>Partnership</h4>
+                        <p>Ideal for multiple owners sharing responsibilities and profits.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Shared resources</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Combined expertise</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Flexible structure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="business-type-card">
+                        <img src="https://images.pexels.com/photos/8867431/pexels-photo-8867431.jpeg" alt="LLC" class="img-fluid mb-3">
+                        <h4>LLC</h4>
+                        <p>Combines flexibility with personal asset protection.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Asset protection</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Tax flexibility</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Less paperwork</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="business-type-card">
+                        <img src="https://images.pexels.com/photos/2451616/pexels-photo-2451616.jpeg" alt="Corporation" class="img-fluid mb-3">
+                        <h4>Corporation</h4>
+                        <p>Maximum protection and structure for larger operations.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check text-success me-2"></i>Full protection</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Stock options</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Professional image</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Formation Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg" alt="Business Registration">
+                        <div class="card-body">
+                            <h4>Business Name Registration</h4>
+                            <p>Secure your unique business name and establish your brand identity.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Trademark Search</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Name Availability Check</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Domain Registration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Brand Protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg" alt="Filing & Incorporation">
+                        <div class="card-body">
+                            <h4>Filing & Incorporation</h4>
+                            <p>Complete legal documentation and registration process.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Articles of Incorporation</li>
+                                <li><i class="fas fa-check text-success me-2"></i>EIN Registration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>State Registration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Operating Agreements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.pexels.com/photos/5669619/pexels-photo-5669619.jpeg" alt="Compliance">
+                        <div class="card-body">
+                            <h4>Licenses & Permits</h4>
+                            <p>Obtain all necessary permits and licenses for your business.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>State Licenses</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Local Permits</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Industry Certifications</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Annual Compliance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Formation Process</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Initial Consultation</h4>
+                            <p>We discuss your business goals and help you choose the right structure.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Documentation</h4>
+                            <p>We prepare and file all necessary legal documents.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Registration</h4>
+                            <p>We handle state and federal registration processes.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Compliance Setup</h4>
+                            <p>We ensure all permits and licenses are in place.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="process-animation" class="animation-container h-100"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Us</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
+                        <h4>Expert Guidance</h4>
+                        <p>Our experienced professionals understand business law complexities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                        <h4>Efficient Process</h4>
+                        <p>Quick and simple formation process without delays.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                        <h4>Ongoing Support</h4>
+                        <p>Continuous assistance as your business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Business Support Services -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Additional Business Support Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4><i class="fas fa-book text-primary me-2"></i>Business Planning</h4>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Business Plan Development</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Financial Projections</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Market Analysis</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Strategy Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4><i class="fas fa-shield-alt text-primary me-2"></i>Compliance Services</h4>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Annual Report Filing</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Tax Registration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Regulatory Compliance</li>
+                                <li><i class="fas fa-check text-success me-2"></i>License Renewals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Start Your Business?</h2>
+            <p class="lead mb-4">Let us help you turn your business idea into reality!</p>
+            <a href="#contact" class="btn btn-light btn-lg">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@khobtax.com<br>Phone: (555) 123-4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Services</a></li>
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Preciseo-Tax-61572610200882/" target="_blank" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/preciseo_tax/?igshid=MWM2cHVnbnhoeXo1eA%3D%3D" target="_blank" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize Lottie Animations
+        const animations = {
+            hero: {
+                container: 'hero-animation',
+                path: 'https://assets9.lottiefiles.com/packages/lf20_6aYlBl.json'  // Business growth animation
+            },
+            process: {
+                container: 'process-animation',
+                path: 'https://assets10.lottiefiles.com/packages/lf20_nxsyeqbd.json'  // Process flow animation
+            }
+        };
+
+        // Load animations
+        Object.entries(animations).forEach(([key, config]) => {
+            const container = document.getElementById(config.container);
+            if (container) {
+                lottie.loadAnimation({
+                    container: container,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: config.path
+                });
+            }
+        });
+    </script>
+</body>
+</html>

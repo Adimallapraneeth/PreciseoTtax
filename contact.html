@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Preciseo Tax Services</title>
+    
+    <!-- Core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .feature-card img {
+                width: 80px !important;
+            }
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            background: #1a237e;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            border: none;
+            border-radius: 0;
+            margin-top: 0;
+            padding: 2rem 0;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .dropdown-title {
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .dropdown-item {
+            padding: 0.5rem 0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: transparent;
+            color: #1a237e;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item i {
+            color: #1a237e;
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-shape {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: white;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        /* Contact Specific Styles */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .feature-card {
+            height: 100%;
+            transition: transform 0.3s ease;
+            background: white;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-info-card {
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .form-control {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .form-control:focus {
+            border-color: #1a237e;
+            box-shadow: 0 0 0 0.2rem rgba(26, 35, 126, 0.25);
+        }
+
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 40px 0;
+            }
+
+            .feature-card {
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .form-control {
+                padding: 0.5rem 0.75rem;
+            }
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 60px 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-section {
+                padding: 30px 0;
+            }
+        }
+
+        /* Common Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: #1a237e;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: #1a237e;
+            border-color: #1a237e;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #0d47a1;
+            border-color: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #1a237e;
+            color: white;
+            position: relative;
+        }
+
+        .footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .footer .social-links a {
+            color: white;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .footer ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer ul li a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer ul li i {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer .contact-info i {
+            color: white;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .footer hr {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animation Styles */
+        [data-aos] {
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .navbar {
+                padding: 0.5rem 0;
+            }
+
+            .dropdown-menu {
+                padding: 1rem 0;
+            }
+
+            .hero-section {
+                padding: 100px 0 60px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .contact-info-card {
+                margin-bottom: 2rem;
+            }
+
+            .map-container {
+                margin-top: 2rem;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <h1 class="h3 mb-0">Preciseo Tax</h1>
+                </a>
+                
+                <div class="header-social">
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Add social icons for mobile view -->
+                    <div class="social-icons d-lg-none">
+                        <a href="https://www.facebook.com/p/Preciseo-Tax-61572610200882/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/preciseo_tax/?igsh=MWM2cHVnbnhoeXo1eA%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="service-category">
+                                                <h6>Professional Services</h6>
+                                                <a class="dropdown-item" href="business-filing.html">
+                                                    <i class="fas fa-file-invoice-dollar"></i>
+                                                    <div>
+                                                        <span>Business Filing <span class="professional-badge">Professional</span></span>
+                                                        <span class="service-description">Accurate and timely business tax filing</span>
+                                                    </div>
+                                                </a>
+                                                <a class="dropdown-item" href="itin-processing.html">
+                                                    <i class="fas fa-id-card"></i>
+                                                    <div>
+                                                        <span>ITIN Processing <span class="professional-badge">Professional</span></span>
+                                                        <span class="service-description">Efficient ITIN application and renewal</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="service-category">
+                                                <h6>Specialized Services</h6>
+                                                <a class="dropdown-item" href="fbar-fatca.html">
+                                                    <i class="fas fa-globe"></i>
+                                                    <div>
+                                                        <span>FBAR & FATCA <span class="professional-badge">Professional</span></span>
+                                                        <span class="service-description">International tax compliance solutions</span>
+                                                    </div>
+                                                </a>
+                                                <a class="dropdown-item" href="personal-tax.html">
+                                                    <i class="fas fa-user-tie"></i>
+                                                    <div>
+                                                        <span>Personal Tax Filing <span class="professional-badge">Professional</span></span>
+                                                        <span class="service-description">Expert individual tax return preparation</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="service-category">
+                                                <h6>Premium Services</h6>
+                                                <a class="dropdown-item" href="tax-planning.html">
+                                                    <i class="fas fa-chart-line"></i>
+                                                    <div>
+                                                        <span>Tax Planning <span class="premium-badge">Premium</span></span>
+                                                        <span class="service-description">Strategic tax optimization for maximum savings</span>
+                                                    </div>
+                                                </a>
+                                                <a class="dropdown-item" href="business-formation.html">
+                                                    <i class="fas fa-building"></i>
+                                                    <div>
+                                                        <span>Business Formation <span class="premium-badge">Premium</span></span>
+                                                        <span class="service-description">Complete business setup and registration</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary text-white px-4 ms-2" href="client-login.html">Client Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Contact Section -->
+        <section class="contact-section py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card p-4 rounded-3 shadow-sm text-center">
+                            <img src="https://img.icons8.com/fluency/240/customer-support.png" alt="Customer Support" style="width: 100px; margin-bottom: 1rem;">
+                            <h4>Expert Support</h4>
+                            <p class="text-muted mb-0">Professional assistance for all your tax needs</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card p-4 rounded-3 shadow-sm text-center">
+                            <img src="https://img.icons8.com/fluency/240/tax.png" alt="Tax Expertise" style="width: 100px; margin-bottom: 1rem;">
+                            <h4>Tax Expertise</h4>
+                            <p class="text-muted mb-0">Professional tax solutions</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="feature-card p-4 rounded-3 shadow-sm text-center">
+                            <img src="https://img.icons8.com/fluency/240/calendar-plus.png" alt="Easy Scheduling" style="width: 100px; margin-bottom: 1rem;">
+                            <h4>Easy Scheduling</h4>
+                            <p class="text-muted mb-0">Book appointments online</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <!-- Book an Appointment Form -->
+                    <div class="col-lg-6 mb-4">
+                        <h2 class="mb-4">Schedule a Consultation</h2>
+                        <form id="contactForm" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Time Zone</label>
+                                    <select class="form-select mb-3" id="timeZone" name="timeZone" required>
+                                        <option value="">Select Time Zone</option>
+                                        <option value="EST">Eastern Time (EST)</option>
+                                        <option value="PST">Pacific Time (PST)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Preferred Date</label>
+                                    <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Preferred Time (We're available 24/7)</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <select class="form-select mb-3" id="timeRange" name="timeRange" required>
+                                                <option value="">Select Time Range</option>
+                                                <option value="early_morning">Early Morning (12 AM - 6 AM)</option>
+                                                <option value="morning">Morning (6 AM - 12 PM)</option>
+                                                <option value="afternoon">Afternoon (12 PM - 6 PM)</option>
+                                                <option value="evening">Evening (6 PM - 12 AM)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="form-select" id="specificTime" name="specificTime" required disabled>
+                                                <option value="">Select Specific Time</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">Schedule Consultation</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div id="successMessage" class="alert alert-success mt-4 d-none" role="alert">
+                            Your appointment has been scheduled successfully!
+                        </div>
+                        <div id="errorMessage" class="alert alert-danger mt-4 d-none" role="alert">
+                        </div>
+                    </div>
+
+                    <!-- Get in Touch Section -->
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">Contact Information</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="contact-info-card bg-white p-4 rounded-3 shadow-sm">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                                        <h5 class="ms-3 mb-0">Address</h5>
+                                    </div>
+                                    <p class="mb-0">501 Scarborough Drive, Egg Harbor Township, NJ 08234</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-info-card bg-white p-4 rounded-3 shadow-sm">
+                                    <i class="fas fa-clock fa-2x mb-3 text-primary"></i>
+                                    <h5>Business Hours</h5>
+                                    <p class="mb-0">Monday - Friday<br>9:00 AM - 5:00 PM<br>Weekend by Appointment</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-info-card bg-white p-4 rounded-3 shadow-sm">
+                                    <i class="fas fa-phone fa-2x mb-3 text-primary"></i>
+                                    <h5>Phone</h5>
+                                    <p class="mb-0">(551) 758-9773</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-info-card bg-white p-4 rounded-3 shadow-sm">
+                                    <i class="fas fa-envelope fa-2x mb-3 text-primary"></i>
+                                    <h5>Email</h5>
+                                    <p class="mb-0">info@preciseotax.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-4">Our Location</h2>
+                <div class="map-container" style="height: 400px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.675372390484!2d-74.5987138!3d39.3805199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c0e6e0e0e0e0e1%3A0x0!2s501+Scarborough+Dr%2C+Egg+Harbor+Township%2C+NJ+08234!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius: 10px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer pt-5 pb-3">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-3">
+                        <h5 class="mb-4">About Preciseo Tax</h5>
+                        <p>Professional tax services tailored to your needs. We provide expert tax preparation, planning, and consultation services to individuals and businesses.</p>
+                        <div class="social-links mt-4">
+                            <a href="https://www.facebook.com/p/Preciseo-Tax-61572610200882/" target="_blank" class="me-3"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/preciseo_tax/?igsh=MWM2cHVnbnhoeXo1eA%3D%3D" target="_blank" class="me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="mb-4">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="services.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>Services
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="about.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>About Us
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="faq.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>FAQ's
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="contact.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="mb-4">Other Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="privacy-policy.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>Privacy Policy
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="cookie-policy.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>Cookie Policy
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="terms-of-use.html" class="text-white text-decoration-none">
+                                    <i class="fas fa-chevron-right me-2"></i>Terms of Use
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="mb-4">Contact Us</h5>
+                        <ul class="list-unstyled">
+                            <li class="d-flex mb-3">
+                                <i class="fas fa-map-marker-alt mt-1 me-3 text-white"></i>
+                                <p class="mb-0">501 Scarborough Drive<br>Egg Harbor Township, NJ 08234</p>
+                            </li>
+                            <li class="d-flex mb-3">
+                                <i class="fas fa-phone mt-1 me-3 text-white"></i>
+                                <p class="mb-0">(551) 758-9773</p>
+                            </li>
+                            <li class="d-flex mb-3">
+                                <i class="fas fa-envelope mt-1 me-3 text-white"></i>
+                                <p class="mb-0">info@preciseotax.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="mt-4 mb-3 border-light">
+                <div class="text-center">
+                    <p class="mb-0">&copy; 2025 Preciseo Tax. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Form submission handling
+            document.getElementById('contactForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const successMessage = document.getElementById('successMessage');
+                const errorMessage = document.getElementById('errorMessage');
+                const submitButton = this.querySelector('button[type="submit"]');
+                
+                // Hide any existing messages
+                successMessage.classList.add('d-none');
+                errorMessage.classList.add('d-none');
+                
+                // Disable submit button and show loading state
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                
+                // Gather form data
+                const formData = new FormData(this);
+                
+                // Log form data for debugging
+                for (let pair of formData.entries()) {
+                    console.log(pair[0] + ': ' + pair[1]);
+                }
+                
+                try {
+                    console.log('Sending request to:', 'http://localhost:8080/smtp_mail.php');
+                    const response = await fetch('http://localhost:8080/smtp_mail.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    console.log('Response status:', response.status);
+                    const result = await response.json();
+                    console.log('Response data:', result);
+                    
+                    if (result.success) {
+                        // Show success message
+                        successMessage.textContent = result.message || "Your consultation request has been sent successfully!";
+                        successMessage.classList.remove('d-none');
+                        // Reset form
+                        this.reset();
+                        // Reset specific time dropdown
+                        document.getElementById('specificTime').disabled = true;
+                    } else {
+                        // Show error message
+                        errorMessage.textContent = result.message || "There was an error sending your request. Please try again.";
+                        errorMessage.classList.remove('d-none');
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    // Show error message
+                    errorMessage.textContent = 'Network error. Please try again later.';
+                    errorMessage.classList.remove('d-none');
+                } finally {
+                    // Re-enable submit button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Schedule Consultation';
+                }
+            });
+
+            // Time selection system
+            const timeRange = document.getElementById('timeRange');
+            const specificTime = document.getElementById('specificTime');
+            
+            const timeSlots = {
+                early_morning: Array.from({length: 24}, (_, i) => {
+                    const hour = i % 12 || 12;
+                    const period = i < 12 ? 'AM' : 'PM';
+                    if (i >= 0 && i < 6) {
+                        return [`${hour}:00 ${period}`, `${hour}:30 ${period}`];
+                    }
+                    return [];
+                }).flat().filter(Boolean),
+                morning: Array.from({length: 24}, (_, i) => {
+                    const hour = i % 12 || 12;
+                    const period = i < 12 ? 'AM' : 'PM';
+                    if (i >= 6 && i < 12) {
+                        return [`${hour}:00 ${period}`, `${hour}:30 ${period}`];
+                    }
+                    return [];
+                }).flat().filter(Boolean),
+                afternoon: Array.from({length: 24}, (_, i) => {
+                    const hour = i % 12 || 12;
+                    const period = i < 12 ? 'AM' : 'PM';
+                    if (i >= 12 && i < 18) {
+                        return [`${hour}:00 ${period}`, `${hour}:30 ${period}`];
+                    }
+                    return [];
+                }).flat().filter(Boolean),
+                evening: Array.from({length: 24}, (_, i) => {
+                    const hour = i % 12 || 12;
+                    const period = i < 12 ? 'AM' : 'PM';
+                    if (i >= 18 && i < 24) {
+                        return [`${hour}:00 ${period}`, `${hour}:30 ${period}`];
+                    }
+                    return [];
+                }).flat().filter(Boolean)
+            };
+
+            timeRange.addEventListener('change', function() {
+                specificTime.innerHTML = '<option value="">Select Specific Time</option>';
+                specificTime.disabled = !this.value;
+                
+                if (this.value) {
+                    timeSlots[this.value].forEach(time => {
+                        const option = document.createElement('option');
+                        option.value = time;
+                        option.textContent = time;
+                        specificTime.appendChild(option);
+                    });
+                }
+            });
+
+            // Form validation
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                if (!this.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                this.classList.add('was-validated');
+            });
+        </script>
+    </main>
+</body>
+</html>

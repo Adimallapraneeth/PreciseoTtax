@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: preciseo-tax-server
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://adimallapraneeth.github.io

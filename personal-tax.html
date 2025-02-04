@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Tax Filing - Preciseo Tax</title>
+    
+    <!-- Core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #001A57;
+            --secondary-color: #54A654;
+            --text-color: #474747;
+            --light-bg: #f6f7f9;
+        }
+
+        body {
+            font-family: 'Mulish', sans-serif;
+            color: var(--text-color);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            margin-top: 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 26, 87, 0.85), rgba(0, 26, 87, 0.85)), url('https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-icon {
+            font-size: 64px;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .consultation-section {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.95)), url('https://images.pexels.com/photos/7681105/pexels-photo-7681105.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .consultation-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .document-card {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .document-card:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .document-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+        }
+
+        .cta-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expertise-list li {
+            padding: 10px 0 10px 30px;
+            position: relative;
+        }
+
+        .expertise-list li:before {
+            content: '✓';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background: #001545;
+            border-color: #001545;
+        }
+
+        .stats-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .expertise-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+    <script src="js/animations.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Preciseo Tax</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="itin-processing.html">ITIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="personal-tax.html">Personal Tax</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <i class="fas fa-file-invoice-dollar hero-icon"></i>
+            <h1 class="display-4 fw-bold mb-4">Personal Tax Filing Services</h1>
+            <p class="lead mb-5">Expert tax preparation services tailored to your unique financial situation</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Personal Tax Filing</h1>
+                    <p class="lead">Professional tax preparation services</p>
+                </div>
+                <div class="col-lg-6">
+                    <div id="tax-animation" class="animation-container"></div>
+                </div>
+            </div>
+            <a href="#consultation" class="btn btn-light btn-lg">Schedule Consultation</a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Why Choose Preciseo Tax?</h2>
+                    <p class="lead mb-4">In today's complex tax landscape, having expert guidance makes all the difference. Over 70% of individuals prefer working with tax professionals to ensure nothing is overlooked.</p>
+                    <p class="mb-4">At Preciseo Tax, we combine expertise with personalized service to deliver precise, efficient tax solutions tailored to your unique financial situation. Our experienced professionals stay current with the latest tax laws, ensuring you receive every eligible deduction and credit.</p>
+                    <div class="row g-4 mt-4">
+                        <div class="col-6">
+                            <div class="stats-card">
+                                <i class="fas fa-check-circle mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                                <div class="stats-number">98%</div>
+                                <div class="stats-label">Client Satisfaction</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-card">
+                                <i class="fas fa-star mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                                <div class="stats-number">15+</div>
+                                <div class="stats-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.pexels.com/photos/7681101/pexels-photo-7681101.jpeg" alt="Tax Professional at Work" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section id="consultation" class="consultation-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center">
+                    <i class="fas fa-handshake consultation-icon"></i>
+                    <h2 class="h3 mb-4">Schedule a Consultation</h2>
+                    <p class="lead mb-4">Let's discuss your tax situation and find the best solutions for you.</p>
+                    <a href="#" class="btn btn-primary btn-lg">Book Now</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-5">
+                            <h3 class="h4 mb-4">What to Expect</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Comprehensive financial review</li>
+                                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Tax planning strategies</li>
+                                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Deduction optimization</li>
+                                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Future tax considerations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas of Expertise -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Areas of Expertise</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="https://images.pexels.com/photos/7681097/pexels-photo-7681097.jpeg" alt="Individual Tax Returns" class="expertise-image">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Individual Tax Returns</h3>
+                        <p>Comprehensive tax preparation for individuals, ensuring maximum deductions and credits.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://images.pexels.com/photos/7681099/pexels-photo-7681099.jpeg" alt="Tax Planning" class="expertise-image">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Tax Planning</h3>
+                        <p>Strategic tax planning to minimize future tax liability and optimize your financial position.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://images.pexels.com/photos/7681095/pexels-photo-7681095.jpeg" alt="Tax Resolution" class="expertise-image">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Tax Resolution</h3>
+                        <p>Expert assistance with IRS issues, including audits, appeals, and payment arrangements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Required Documents -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Required Documents</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Tax Documents</h3>
+                    <div class="document-card">
+                        <i class="fas fa-file-alt document-icon"></i>
+                        Income Statements (W2 Forms)
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-file-invoice document-icon"></i>
+                        Interest Statements (1099-INT)
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-file-contract document-icon"></i>
+                        Dividend Statements (1099-DIV)
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-file-signature document-icon"></i>
+                        Schedule K1 for Partnerships
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Supporting Documents</h3>
+                    <div class="document-card">
+                        <i class="fas fa-file-medical document-icon"></i>
+                        Medical Expenses
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-home document-icon"></i>
+                        Real Estate Taxes
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-hand-holding-usd document-icon"></i>
+                        Charitable Contributions
+                    </div>
+                    <div class="document-card">
+                        <i class="fas fa-graduation-cap document-icon"></i>
+                        Education Expenses
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+            <p class="lead mb-4">Take the first step towards hassle-free tax filing. Schedule a consultation with our experts today.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="tel:510-742-1419" class="btn btn-light btn-lg">
+                    <i class="fas fa-phone me-2"></i>510-742-1419
+                </a>
+                <a href="https://calendly.com/preciseo-tax/consultation" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-calendar me-2"></i>Schedule Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Portal Info -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Secure Client Portal</h2>
+            <p class="lead mb-4">Access our secure client portal to upload documents and view your tax returns.</p>
+            <a href="https://access.securefilepro.com/portal/#/login" class="btn btn-primary btn-lg">Access Portal</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <p class="mb-3">Preciseo Tax</p>
+                    <p class="mb-3">123 Main St, Suite 456</p>
+                    <p class="mb-3">Anytown, CA 12345</p>
+                    <p class="mb-3">Phone: 510-742-1419</p>
+                    <p class="mb-3">Email: <a href="mailto:info@preciseotax.com" class="text-light">info@preciseotax.com</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="personal-tax.html" class="text-light">Personal Tax Filing</a></li>
+                        <li class="mb-2"><a href="itin-processing.html" class="text-light">ITIN Processing</a></li>
+                        <li class="mb-2"><a href="business-tax.html" class="text-light">Business Tax Filing</a></li>
+                        <li class="mb-2"><a href="tax-planning.html" class="text-light">Tax Planning</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://www.irs.gov/" class="text-light" target="_blank">IRS Website</a></li>
+                        <li class="mb-2"><a href="https://www.ftb.ca.gov/" class="text-light" target="_blank">California Franchise Tax Board</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

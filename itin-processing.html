@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITIN Processing Services - Preciseo Tax</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #001A57;
+            --secondary-color: #054789;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 26, 87, 0.85), rgba(0, 26, 87, 0.85)), url('https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 180px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: -100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .process-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary-color);
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .document-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .document-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,26,87,0.03) 0%, rgba(5,71,137,0.03) 100%);
+            z-index: 0;
+        }
+
+        .document-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .document-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefits-section {
+            background: var(--light-bg);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,26,87,0.03) 0%, rgba(5,71,137,0.03) 100%);
+            z-index: 0;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .btn-custom {
+            padding: 15px 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover::before {
+            transform: translateX(0);
+        }
+
+        .document-image {
+            background: linear-gradient(rgba(0, 26, 87, 0.85), rgba(0, 26, 87, 0.85)), url('https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            border-radius: 15px;
+        }
+
+        .consultation-image {
+            background: linear-gradient(rgba(0, 26, 87, 0.85), rgba(0, 26, 87, 0.85)), url('https://images.pexels.com/photos/6646904/pexels-photo-6646904.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Preciseo Tax</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="itin-processing.html">ITIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="personal-tax.html">Personal Tax</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="display-3 fw-bold mb-4">ITIN Processing Services</h1>
+                <p class="lead mb-5">Your trusted partner for fast, secure, and hassle-free ITIN applications</p>
+                <a href="#get-started" class="btn btn-light btn-custom btn-lg">Start Your Application</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="document-image p-5 text-white">
+                        <h3 class="h2 mb-4">Required Documents</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check me-2"></i>Passport</li>
+                            <li class="mb-3"><i class="fas fa-check me-2"></i>National ID Card</li>
+                            <li class="mb-3"><i class="fas fa-check me-2"></i>Birth Certificate</li>
+                            <li><i class="fas fa-check me-2"></i>Visa Documents</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="consultation-image p-5 text-white">
+                        <h3 class="h2 mb-4">Professional Assistance</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-check me-2"></i>Form W-7 Preparation</li>
+                            <li class="mb-3"><i class="fas fa-check me-2"></i>Document Verification</li>
+                            <li class="mb-3"><i class="fas fa-check me-2"></i>IRS Submission</li>
+                            <li><i class="fas fa-check me-2"></i>Status Tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Card -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="hero-card">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2 class="h3 fw-bold mb-4">What is an Individual Taxpayer Identification Number (ITIN)?</h2>
+                        <p class="lead mb-4">An ITIN is a tax processing number issued by the Internal Revenue Service (IRS) for individuals who need to file U.S. tax returns but are not eligible for a Social Security Number.</p>
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-check-circle text-primary me-3" style="font-size: 24px;"></i>
+                                    <span>Required for tax filing</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-check-circle text-primary me-3" style="font-size: 24px;"></i>
+                                    <span>Access to tax benefits</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-check-circle text-primary me-3" style="font-size: 24px;"></i>
+                                    <span>Banking services access</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-check-circle text-primary me-3" style="font-size: 24px;"></i>
+                                    <span>Loan application support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="p-4">
+                            <i class="fas fa-id-card mb-4" style="font-size: 80px; color: var(--primary-color);"></i>
+                            <h3 class="h5">9-Digit Unique Number</h3>
+                            <p class="text-muted">Issued by the IRS for tax processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Simple 4-Step Application Process</h2>
+            <div class="row g-4">
+                <div class="col-lg-3">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <i class="fas fa-file-alt process-icon"></i>
+                        <h3 class="h4 mb-3">Complete Form W-7</h3>
+                        <p>We help you fill out the IRS Form W-7 application accurately and completely.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <i class="fas fa-id-card process-icon"></i>
+                        <h3 class="h4 mb-3">Gather Documents</h3>
+                        <p>We guide you through collecting all required identity and foreign status documentation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <i class="fas fa-paper-plane process-icon"></i>
+                        <h3 class="h4 mb-3">Submit Application</h3>
+                        <p>We handle the submission process with the IRS on your behalf.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <i class="fas fa-check-circle process-icon"></i>
+                        <h3 class="h4 mb-3">Receive ITIN</h3>
+                        <p>Get your ITIN and start accessing tax benefits and financial services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose Our ITIN Services?</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Fast Processing</h3>
+                        <p>Quick and efficient application processing with regular status updates.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Same-day processing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Status tracking</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Priority handling</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Secure Service</h3>
+                        <p>Your information is protected with the highest security standards.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Encrypted data</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Secure transmission</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Privacy protection</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="h4 mb-3">Expert Support</h3>
+                        <p>Dedicated team to guide you through every step of the process.</p>
+                        <ul class="list-unstyled mt-4">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 24/7 assistance</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Multilingual support</li>
+                            <li><i class="fas fa-check text-primary me-2"></i> Personal advisor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="get-started" class="cta-section">
+        <div class="container position-relative">
+            <h2 class="display-4 fw-bold mb-4">Ready to Get Your ITIN?</h2>
+            <p class="lead mb-5">Start your application today and let our experts handle the rest!</p>
+            <a href="#" class="btn btn-light btn-custom btn-lg">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@preciseo.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Tax Street, Financial City</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="privacy.html" class="text-light">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-light">Terms of Service</a></li>
+                        <li><a href="faq.html" class="text-light">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Preciseo-Tax-61572610200882/" target="_blank" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/preciseo_tax/?igshid=MWM2cHVnbnhoeXo1eA%3D%3D" target="_blank" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p class="mb-0">&copy; 2024 Preciseo Tax. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
